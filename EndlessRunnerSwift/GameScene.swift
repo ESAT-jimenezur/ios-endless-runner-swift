@@ -10,6 +10,10 @@ import SpriteKit
 
 class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed:"sprite_player")
+    var total_clouds = 15
+    var clouds = Array<SKSpriteNode>()
+    
+
     let score_label = SKLabelNode(fontNamed:"zapfino")
     var is_touching = false
     var score_counter = 0;
@@ -17,7 +21,19 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
 		/* Setup your scene here */
 		
-		// Set backgroun color
+        
+        for var i = 0; i < total_clouds; ++i {
+            print("Creating cloud: \(i)")
+            let cloud = SKSpriteNode(imageNamed:"sprite_cloud")
+            let rand_posy : CGFloat = CGFloat(rand() % 1000)
+            let rand_posx : CGFloat = CGFloat(rand() % 1000)
+            cloud.position = CGPointMake(rand_posx, rand_posy)
+            clouds.append(cloud);
+            view.scene!.addChild(cloud);
+        }
+        
+        
+		// Set background color
 		self.backgroundColor = SKColor(red: 135/255, green: 206/255, blue: 235/255, alpha: 1)
 		
 		// Player Sprite
@@ -59,6 +75,13 @@ class GameScene: SKScene {
         }else{
             // Push heli to top
             player.position = CGPointMake(player.position.x, player.position.y + 5);
+        }
+    
+        for var i = 0; i < total_clouds; ++i {
+            clouds[i].position = CGPointMake(clouds[i].position.x - 3.0, clouds[i].position.y);
+            if clouds[i].position.x <= -100.0 {
+                clouds[i].position.x += 1050 + CGFloat(rand() % 300)
+            }
         }
     }
 }
