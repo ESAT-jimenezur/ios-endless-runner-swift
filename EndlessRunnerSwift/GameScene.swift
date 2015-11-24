@@ -10,8 +10,9 @@ import SpriteKit
 
 class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed:"sprite_player")
+    let score_label = SKLabelNode(fontNamed:"zapfino")
     var is_touching = false
-    
+    var score_counter = 0;
     
     override func didMoveToView(view: SKView) {
 		/* Setup your scene here */
@@ -19,11 +20,17 @@ class GameScene: SKScene {
 		// Set backgroun color
 		self.backgroundColor = SKColor(red: 135/255, green: 206/255, blue: 235/255, alpha: 1)
 		
-		
+		// Player Sprite
         player.position = CGPointMake(100, 320)
         player.xScale = -0.25;
         player.yScale = 0.25;
         view.scene!.addChild(player)
+        
+        // Score label
+        score_label.text = "0";
+        score_label.fontSize = 20;
+        score_label.position = CGPoint(x:150, y:CGRectGetHeight(self.frame) - 50);
+        view.scene!.addChild(score_label)
 		
     }
 	
@@ -43,6 +50,8 @@ class GameScene: SKScene {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        score_counter++;
+        score_label.text = "Score:   \(score_counter)";
         
         if !is_touching {
             // Do Gravity (Heli)
