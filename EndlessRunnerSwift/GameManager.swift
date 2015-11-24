@@ -44,9 +44,9 @@ class GameManager {
             view.presentScene(scene)
             break;
         case SCENE.SCENE_SCORE.rawValue:
-            //let scene = GameScene(size: CGSizeMake(960, 640))
-            //scene.scaleMode = .AspectFill
-            //view.presentScene(scene)
+            let scene = ScoreScene(size: CGSizeMake(960, 640))
+            scene.scaleMode = .AspectFill
+            view.presentScene(scene)
             break;
         default:
             break;

@@ -27,24 +27,8 @@ class GameViewController: UIViewController {
 		
         let current_scene = GameManager.Instance.current_scene();
         
-        GameManager.Instance.start_scene(skView, scene: GameManager.SCENE.SCENE_GAME.rawValue);
+        GameManager.Instance.start_scene(skView, scene: GameManager.SCENE.SCENE_MENU.rawValue);
         
-        /*
-        switch current_scene {
-        case GameManager.SCENE.SCENE_MENU.rawValue:
-            let scene = MenuScene(size: CGSizeMake(960, 640))
-            scene.scaleMode = .AspectFill
-            skView.presentScene(scene)
-            break;
-        case GameManager.SCENE.SCENE_GAME.rawValue:
-            let scene = GameScene(size: CGSizeMake(960, 640))
-            scene.scaleMode = .AspectFill
-            skView.presentScene(scene)
-        default:
-            break;
-        }
-        */
-		//let scene = GameScene(size: CGSizeMake(960, 640))
 		/* Set the scale mode to scale to fit the window */
 
     }

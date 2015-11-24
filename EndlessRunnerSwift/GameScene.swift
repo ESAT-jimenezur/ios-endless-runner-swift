@@ -107,6 +107,23 @@ class GameScene: SKScene {
             if missiles[i].position.x <= -100.0 {
                 missiles[i].position.x += 1050 + CGFloat(rand() % 300)
             }
+            // Check collision
+            if missiles[i].position.x > player.position.x && missiles[i].position.x < player.position.x + player.frame.size.width
+            && missiles[i].position.y > player.position.y && missiles[i].position.y < player.position.y + player.frame.size.height{
+                print("Collision: Player dead")
+                let settings = NSUserDefaults.standardUserDefaults()
+                settings.setValue(score_counter, forKey:"score")
+                
+                
+                let old_hiscore = settings.valueForKey("hiscore") as? Int;
+                
+                if score_counter > old_hiscore {
+                    settings.setValue(score_counter, forKey: "hiscore")
+                }
+                
+                settings.synchronize()
+                GameManager.Instance.start_scene(view!, scene: GameManager.SCENE.SCENE_SCORE.rawValue);
+            }
         }
         
     }
