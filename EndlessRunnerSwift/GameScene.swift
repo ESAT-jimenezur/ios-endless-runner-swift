@@ -11,7 +11,9 @@ import SpriteKit
 class GameScene: SKScene {
     let player = SKSpriteNode(imageNamed:"sprite_player")
     var total_clouds = 15
+    var total_missiles = 10
     var clouds = Array<SKSpriteNode>()
+    var missiles = Array<SKSpriteNode>()
     
 
     let score_label = SKLabelNode(fontNamed:"zapfino")
@@ -21,15 +23,29 @@ class GameScene: SKScene {
     override func didMoveToView(view: SKView) {
 		/* Setup your scene here */
 		
-        
-        for var i = 0; i < total_clouds; ++i {
+        // Clouds creation
+        for var i = 0; i <= total_clouds; ++i {
             print("Creating cloud: \(i)")
             let cloud = SKSpriteNode(imageNamed:"sprite_cloud")
             let rand_posy : CGFloat = CGFloat(rand() % 1000)
             let rand_posx : CGFloat = CGFloat(rand() % 1000)
             cloud.position = CGPointMake(rand_posx, rand_posy)
+            cloud.zPosition = CGFloat(rand() % 10)
             clouds.append(cloud);
             view.scene!.addChild(cloud);
+        }
+        
+        // Missiles creation
+        for var i = 0; i <= total_missiles; ++i {
+            print("Creating missile: \(i)")
+            let missile = SKSpriteNode(imageNamed:"sprite_missile")
+            let rand_posy : CGFloat = CGFloat(rand() % 1000)
+            let rand_posx : CGFloat = CGFloat(2000 + rand() % 1200)
+            missile.position = CGPointMake(rand_posx, rand_posy)
+            missile.xScale = -0.1;
+            missile.yScale = 0.1;
+            missiles.append(missile);
+            view.scene!.addChild(missile);
         }
         
         
@@ -77,11 +93,21 @@ class GameScene: SKScene {
             player.position = CGPointMake(player.position.x, player.position.y + 5);
         }
     
-        for var i = 0; i < total_clouds; ++i {
+        // Cloud movement
+        for var i = 0; i <= total_clouds; ++i {
             clouds[i].position = CGPointMake(clouds[i].position.x - 3.0, clouds[i].position.y);
             if clouds[i].position.x <= -100.0 {
                 clouds[i].position.x += 1050 + CGFloat(rand() % 300)
             }
         }
+        
+        // Missile movement
+        for var i = 0; i <= total_missiles; ++i {
+            missiles[i].position = CGPointMake(missiles[i].position.x - 6.0, missiles[i].position.y);
+            if missiles[i].position.x <= -100.0 {
+                missiles[i].position.x += 1050 + CGFloat(rand() % 300)
+            }
+        }
+        
     }
 }

@@ -19,6 +19,7 @@
 		82A7407E1C04CE0C004F7AA0 /* sprite_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A7407D1C04CE0C004F7AA0 /* sprite_player.png */; settings = {ASSET_TAGS = (); }; };
 		82A740801C04D2FB004F7AA0 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7407F1C04D2FB004F7AA0 /* Object.swift */; settings = {ASSET_TAGS = (); }; };
 		82A740841C04D48D004F7AA0 /* sprite_cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A740831C04D48D004F7AA0 /* sprite_cloud.png */; settings = {ASSET_TAGS = (); }; };
+		82A740881C04DFAD004F7AA0 /* sprite_missile.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A740871C04DFAD004F7AA0 /* sprite_missile.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		82A7407D1C04CE0C004F7AA0 /* sprite_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_player.png; sourceTree = "<group>"; };
 		82A7407F1C04D2FB004F7AA0 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		82A740831C04D48D004F7AA0 /* sprite_cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_cloud.png; sourceTree = "<group>"; };
+		82A740871C04DFAD004F7AA0 /* sprite_missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_missile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		249A3B681BE7EC3C001EDBE7 /* EndlessRunnerSwift */ = {
 			isa = PBXGroup;
 			children = (
+				82A740871C04DFAD004F7AA0 /* sprite_missile.png */,
 				82A740831C04D48D004F7AA0 /* sprite_cloud.png */,
 				82A7407D1C04CE0C004F7AA0 /* sprite_player.png */,
 				249A3B691BE7EC3C001EDBE7 /* AppDelegate.swift */,
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				249A3B781BE7EC3C001EDBE7 /* LaunchScreen.storyboard in Resources */,
+				82A740881C04DFAD004F7AA0 /* sprite_missile.png in Resources */,
 				249A3B751BE7EC3C001EDBE7 /* Assets.xcassets in Resources */,
 				249A3B731BE7EC3C001EDBE7 /* Main.storyboard in Resources */,
 				82A7407E1C04CE0C004F7AA0 /* sprite_player.png in Resources */,
