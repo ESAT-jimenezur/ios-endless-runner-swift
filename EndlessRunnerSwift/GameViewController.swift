@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 ESAT. All rights reserved.
 //
 
+
 import UIKit
 import SpriteKit
+
 
 class GameViewController: UIViewController {
 
@@ -22,12 +24,26 @@ class GameViewController: UIViewController {
             
 		/* Sprite Kit applies additional optimizations to improve rendering performance */
 		skView.ignoresSiblingOrder = true
-			
-		let scene = GameScene(size: CGSizeMake(960, 640))
+		
+        let current_scene = GameManager.Instance.current_scene();
+        
+        switch current_scene {
+        case GameManager.SCENE.SCENE_MENU.rawValue:
+            let scene = MenuScene(size: CGSizeMake(960, 640))
+            scene.scaleMode = .AspectFill
+            skView.presentScene(scene)
+            break;
+        case GameManager.SCENE.SCENE_GAME.rawValue:
+            let scene = GameScene(size: CGSizeMake(960, 640))
+            scene.scaleMode = .AspectFill
+            skView.presentScene(scene)
+        default:
+            break;
+        }
+        
+		//let scene = GameScene(size: CGSizeMake(960, 640))
 		/* Set the scale mode to scale to fit the window */
-		scene.scaleMode = .AspectFill
-            
-		skView.presentScene(scene)
+
     }
 
     override func shouldAutorotate() -> Bool {

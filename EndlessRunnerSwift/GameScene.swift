@@ -13,16 +13,10 @@ class GameScene: SKScene {
 		/* Setup your scene here */
 		
 		// Set backgroun color
-		self.backgroundColor = SKColor.lightGrayColor()
+		self.backgroundColor = SKColor(red: 135/255, green: 206/255, blue: 235/255, alpha: 1)
 		
 		
-		// Pause label
-		let pauseLabel = SKLabelNode(fontNamed:"Chalkduster")
-		pauseLabel.text = "EndlessRunner";
-		pauseLabel.fontSize = 35;
-		pauseLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
 		
-		self.addChild(pauseLabel)
     }
 	
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
