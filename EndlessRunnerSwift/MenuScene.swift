@@ -36,8 +36,8 @@ class MenuScene: SKScene {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         //* Called when a touch ends */
         for touch: UITouch in touches {
-            let location = touch.locationInNode(self)
-            GameManager.Instance.start_scene(GameManager.SCENE.SCENE_GAME.rawValue);
+            //let location = touch.locationInNode(self)
+            GameManager.Instance.start_scene(view!, scene: GameManager.SCENE.SCENE_GAME.rawValue);
         }
     }
     

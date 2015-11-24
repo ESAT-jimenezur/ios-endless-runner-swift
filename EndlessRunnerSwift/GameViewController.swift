@@ -27,6 +27,9 @@ class GameViewController: UIViewController {
 		
         let current_scene = GameManager.Instance.current_scene();
         
+        GameManager.Instance.start_scene(skView, scene: GameManager.SCENE.SCENE_GAME.rawValue);
+        
+        /*
         switch current_scene {
         case GameManager.SCENE.SCENE_MENU.rawValue:
             let scene = MenuScene(size: CGSizeMake(960, 640))
@@ -40,7 +43,7 @@ class GameViewController: UIViewController {
         default:
             break;
         }
-        
+        */
 		//let scene = GameScene(size: CGSizeMake(960, 640))
 		/* Set the scale mode to scale to fit the window */
 

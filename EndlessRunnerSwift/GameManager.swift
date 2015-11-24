@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import SpriteKit
 
 class GameManager {
     
@@ -24,12 +26,32 @@ class GameManager {
     
     init() {
         print("Game Started");
-        current_scene_ = SCENE.SCENE_MENU.rawValue;
+        current_scene_ = SCENE.SCENE_GAME.rawValue; // CHANGE THIS
     };
     
-    func start_scene(scene : Int){
+    func start_scene(view: SKView, scene : Int){
         print("Start Scene \(scene)")
         current_scene_ = scene
+        switch scene{
+        case SCENE.SCENE_MENU.rawValue:
+            let scene = MenuScene(size: CGSizeMake(960, 640))
+            scene.scaleMode = .AspectFill
+            view.presentScene(scene)
+            break;
+        case SCENE.SCENE_GAME.rawValue:
+            let scene = GameScene(size: CGSizeMake(960, 640))
+            scene.scaleMode = .AspectFill
+            view.presentScene(scene)
+            break;
+        case SCENE.SCENE_SCORE.rawValue:
+            //let scene = GameScene(size: CGSizeMake(960, 640))
+            //scene.scaleMode = .AspectFill
+            //view.presentScene(scene)
+            break;
+        default:
+            break;
+        }
+        
     }
     
     func current_scene() -> Int{

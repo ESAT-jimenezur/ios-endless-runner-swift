@@ -16,6 +16,7 @@
 		249A3B831BE7EC3C001EDBE7 /* EndlessRunnerSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249A3B821BE7EC3C001EDBE7 /* EndlessRunnerSwiftTests.swift */; };
 		82A7407A1C04BC0E004F7AA0 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A740791C04BC0E004F7AA0 /* GameManager.swift */; settings = {ASSET_TAGS = (); }; };
 		82A7407C1C04C27C004F7AA0 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A7407B1C04C27C004F7AA0 /* MenuScene.swift */; settings = {ASSET_TAGS = (); }; };
+		82A7407E1C04CE0C004F7AA0 /* sprite_player.png in Resources */ = {isa = PBXBuildFile; fileRef = 82A7407D1C04CE0C004F7AA0 /* sprite_player.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		249A3B841BE7EC3C001EDBE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82A740791C04BC0E004F7AA0 /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		82A7407B1C04C27C004F7AA0 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		82A7407D1C04CE0C004F7AA0 /* sprite_player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sprite_player.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		249A3B681BE7EC3C001EDBE7 /* EndlessRunnerSwift */ = {
 			isa = PBXGroup;
 			children = (
+				82A7407D1C04CE0C004F7AA0 /* sprite_player.png */,
 				249A3B691BE7EC3C001EDBE7 /* AppDelegate.swift */,
 				249A3B6D1BE7EC3C001EDBE7 /* GameScene.swift */,
 				249A3B6F1BE7EC3C001EDBE7 /* GameViewController.swift */,
@@ -188,6 +191,7 @@
 				249A3B781BE7EC3C001EDBE7 /* LaunchScreen.storyboard in Resources */,
 				249A3B751BE7EC3C001EDBE7 /* Assets.xcassets in Resources */,
 				249A3B731BE7EC3C001EDBE7 /* Main.storyboard in Resources */,
+				82A7407E1C04CE0C004F7AA0 /* sprite_player.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
